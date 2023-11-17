@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Chat</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"
+    integrity="sha512-Xm9qbB6Pu06k3PUwPj785dyTl6oHxgsv9nHp7ej7nCpAqGZT3OZpsELuCYX05DdonFpTlBpXMOxjavIAIUwr0w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
+
 <body>
-  
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-8">
+        <div class="message-list d-none">
+          <h2>Message</h2>
+          <ul class="list-group_message">
+          </ul>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="users-list d-none">
+          <h2>Users</h2>
+          <ul class="list-group"></ul>
+        </div>
+        <div class="login-form-container">
+          <form class="login-form" action="">
+            <div class="form-group">
+              <label for="nickname">Nickname</label>
+              <input type="text" id="nickname">
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+    <div class="message-form-container fixed-bottom">
+      <form class="message-form d-none">
+        <div class="form-row d-flex">
+          <div class="col-10">
+            <input type="text" class="form-control" placeholder="message">
+          </div>
+          <div class="col-2">
+            <button type="submit" class="btn btn-primary w-100">Send</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </body>
+<script src="js/io.js"></script>
+
 </html>
